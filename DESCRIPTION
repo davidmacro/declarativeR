@@ -1,0 +1,9 @@
+Package: declarativeR
+Type: Package
+Title: Convenience functions to make R more declarative.
+Version: 0.1.0
+Author: D.A. Macro
+Maintainer: D.A. Macro <davidmacro@gmail.com>
+Description: Convenience functions to make R more declarative.
+License: GPL-3.0
+LazyData: TRUE
