@@ -17,7 +17,7 @@ Auxilliary functions to make R code more declarative
 ```
                                
 ```Rscript 
-*Example using magrittR*
+# Example using magrittR*
    c("a", "b", "c") %>%
        casefold(upper = "T") %>%
        strrep( 2 )                             
