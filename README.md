@@ -2,15 +2,25 @@
 Auxilliary functions to make R code more declarative 
 
 # Introduction
-R code can quickly become very complex. Various packages have been developed so simplify R code, such as the (maggrittR)[https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html] package and the (wrapr)[https://github.com/WinVector/wrapr] package. 
+Code written in *R* can quickly become very complex. Unsurprisingly, various great packages have been developed to simplify R code, such as [magrittR](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) and  [wrapr](https://github.com/WinVector/wrapr). These packages add new, custom operators to the R language that can make complex code a lot more readable. 
 
-These packages introduce novel operators to simplify R code. MagrittR for example introduces the `%>%`-piping operator, which can greatly simplify code. 
+Take *MagrittR* for example. Their `%>%` operator is extremely helpfull when writing long chains of operators. Compare the following two examples: 
 
-Compare 
+<table>
+<tr>
+    <td>Regular R<td>
+    <td>MagrittR<td>
+</tr>
+<tr>
+    <td>test<td>
+    <td>test<td>
+</tr>
 
-https://www.r-bloggers.com/magrittr-and-wrapr-pipes-in-r-an-examination/
 
 
+</table> 
+
+ 
 # Examples
 
 
