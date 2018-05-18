@@ -11,11 +11,11 @@ Code written in *R* can quickly become very complex. Unsurprisingly, various gre
 </tr>
 <tr>
     <td>
-        ```splus 
-        c("a", "b", "c") %>%
-        casefold(upper = "T") %>% 
-        strrep(2)
-        ```
+```r
+c("a", "b", "c") %>%
+casefold(upper = "T") %>% 
+strrep(2)
+```
     </td>
     <td>
         <code>
