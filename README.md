@@ -12,22 +12,22 @@ Example:
 </tr>
 <tr>
 <td>
-``` r 
-        strrep(  
-            casefold( 
-                c("a", "b", "c"),   
-                    upper = "T"  
-            ), 2  
-        ) 
+``` 
+strrep(  
+    casefold( 
+        c("a", "b", "c"),   
+            upper = "T"  
+    ), 2  
+) 
 ```
 </td>      
 <td> 
-``` r
-    c("a", "b", "c") %>%  
-    casefold(upper = "T") %>%  
-    strrep(2)
+```  
+c("a", "b", "c") %>%  
+casefold(upper = "T") %>%  
+strrep(2)
 ```
-    </td> 
+</td> 
 </tr>
 </table> 
 
