@@ -12,26 +12,23 @@ Example:
 </tr>
 <tr>
 <td>
-    <code>
-        strrep( <br>
-            &nbsp; casefold( <br>
-            &nbsp; &nbsp;     c("a", "b", "c"), <br>
-            &nbsp; &nbsp;&nbsp; &nbsp;    upper = "T" <br>
-            &nbsp; ), 2 <br>
-        )
-    </code>
+```r 
+        strrep(  
+            casefold( 
+                c("a", "b", "c"),   
+                    upper = "T"  
+            ), 2  
+        ) 
+```
 </td>      
-<td><code>
-   c("a", "b", "c") %>%  <br>
-   &nbsp; &nbsp; casefold(upper = "T") %>% <br>
-   &nbsp; &nbsp; strrep(2)
-</code>
-    </td>
-    
+<td> 
+```r
+    c("a", "b", "c") %>%  
+    casefold(upper = "T") %>%  
+    strrep(2)
+```
+    </td> 
 </tr>
-
-
-
 </table> 
 
  
