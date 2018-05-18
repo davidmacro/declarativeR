@@ -6,8 +6,8 @@ Code written in *R* can quickly become very complex. Unsurprisingly, various gre
 
 <table>
 <tr>
-    <td>Regular R<td>
-    <td>MagrittR<td>
+    <td>Regular R</td>
+    <td>MagrittR</td>
 </tr>
 <tr>
     <td>
