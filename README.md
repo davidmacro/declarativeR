@@ -12,7 +12,7 @@ Example:
 </tr>
 <tr>
 <td>
-```r 
+``` r 
         strrep(  
             casefold( 
                 c("a", "b", "c"),   
@@ -22,7 +22,7 @@ Example:
 ```
 </td>      
 <td> 
-```r
+``` r
     c("a", "b", "c") %>%  
     casefold(upper = "T") %>%  
     strrep(2)
