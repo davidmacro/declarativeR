@@ -4,41 +4,48 @@ Auxilliary functions to make R code more declarative
 # Background
 *R* code can quickly become complex. Unsurprisingly, some great packages have been developed that help to simplify R code. Examples are [magrittR](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) and  [wrapr](https://github.com/WinVector/wrapr). These packages add some custom operators to the R language that make complex code a lot more readable. Take *MagrittR* for example: their `%>%` operator allows multiple nested function calls to be expressed as nead pipelines: 
  
-```Rscript
-# Example using traditional R functions:  
-  strrep(                       
-      casefold(                 
-          c("a", "b", "c"),     
-              upper = "T"       
-      ), 2                      
-  )                             
+__Example using traditional R functions:__  
+```R
+    strrep(                       
+        casefold(                 
+            c("a", "b", "c"),     
+                upper = "T"       
+        ), 2                      
+    )                             
 ```
-                               
+
+__Example using magrittR:__  
 ```Rscript 
-# Example using magrittR*
    c("a", "b", "c") %>%
        casefold(upper = "T") %>%
-       strrep( 2 )                             
+       strrep(2)                             
 ```
   
 # From functions to declarativeR
   
 The *declarativeR* library provides some additional functions to furthermore simplify R code. The idea is to use pipes and declarative statements where possible. 
 
-## Flow control operators: 
+## 1. Flow control
+
 ### ```%if% and %if.not% ```
-Shorthand if and 'if not' operators. Left side is executed iff the condition of the rightside is met. If the left side is an assign operation, a null value is assigned if brackets are not placed around the left side. 
+The *declarativeR* package provides shorthand operators for if and 'if not'. Standard syntax: 
 
+```do x %if% (condition)```
 
-``` rscript
-    
-    # Example 1a - conditional assignment; null assigned if false 
+```do x %if.not% (condition)```
+   
+So the left hand side is executed if the condition on the right hand side is met. Note that if the left hand side is an assign operation, a null value is assigned if no brackets are placed around the statement. 
+
+__Example:__
+
+```R
+    # (1a) - conditional assignment; null assigned if false 
     x <- "value" %if% (condition)
 
-    # Example 1b - conditional assignment; not executed if false
+    # (1b) - conditional assignment; not executed if false
     {x <- "value"} %if.not% (condition)
     
-    # Example 2 - block of code conditional (requires magrittR)
+    # (2) - block of code conditional (requires magrittR)
     {
         x %>% 
            fun1 %>% 
@@ -48,40 +55,82 @@ Shorthand if and 'if not' operators. Left side is executed iff the condition of 
  
 ```
 
-## Apply operators: 
+### ```%xor% ```
 
-R's built in apply operators can be very handy to shorten existing code, but these functions typically introduce a lot of brackets in the code.
+The exclusive or operator is included in R as a function. delcarativeR adds a trivial operator version, namely ```%xor%```. 
 
+
+## 2. Apply functions over lists
+
+R's built in apply operators can be very handy to shorten existing code, but these functions typically introduce a lot of brackets in the code. Both *magrittR* and *declarativeR* can be used to get rid of these, and produce more readable code. 
+
+### ```%>lapply% and %>sapply% ```
+
+These operators simplify the common task of applying one or more functions on a list of items. The piping style is analoguous to the *magrittR* pipe operator.
+
+See the following example, in which two functions are applied in succession on one list of vectors. 
+
+__Example:__
+
+
+```R
+    # Define some input list
+    input <- list(a = c(1,2,3),       
+                  b = c(4,4,5), 
+                  c = c(1,2,3,4,5))
+
+    # ------------------------------------------------# 
+    # Task:                                           #
+    # ------------------------------------------------#
+    #    - sum the vectors in input;                  #
+    #    - take the square root of each sum;          #
+    #    - return as a (named) vector.                #
+    # ------------------------------------------------#
+         
+    # (a) Standard R:
+    sapply(lapply(input, sum), sqrt)
+
+    # (b) Using magrittR's pipe operator:
+    input %>% lapply(sum) %>% sapply(sqrt)
+
+    # (c) Using declarativeR's lapply operator:
+    input %>lapply% sum %>sapply% sqrt
+     
+    # ------------------------------------------------# 
+    # Output:                                         #
+    # ------------------------------------------------#    
+    # a        b        c                             #
+    # 2.449490 3.605551 3.872983                      #
+    # ------------------------------------------------#    
+    
 ```
-    # Input
-    input <- list(a = c(1,2,3),b = c(4,4,5), c = c(1,2,3,4,5))
 
-    # Standard R
-    lapply(input, sum)
-
-    # Using magrittR
-    input %>% lapply(sum)
-
-    # Using declarativeR
-    input %>lapply% sum
+## 3. Working with sets
 
 
 
 
-### ```%>lapply%```
-### ```%>sapply%```
 
 
 
 
-## Examples
- 
-```Rscript
-# Lapply:
-
-list(a = 1, b = list(b1 = 2, b=3))
 
 
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
