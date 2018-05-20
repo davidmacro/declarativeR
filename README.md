@@ -1,7 +1,9 @@
 # declarativeR
 Auxilliary functions to make R code more declarative 
 
-# Background
+___
+
+## Background
 *R* code can quickly become complex. Unsurprisingly, some great packages have been developed that help to simplify R code. Examples are [magrittR](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) and  [wrapr](https://github.com/WinVector/wrapr). These packages add some custom operators to the R language that make complex code a lot more readable. Take *MagrittR* for example: their `%>%` operator allows multiple nested function calls to be expressed as nead pipelines: 
  
 __Example using traditional R functions:__  
@@ -21,15 +23,19 @@ __Example using magrittR:__
        strrep(2)                             
 ```
   
+___
+  
 # From functions to pipes to declarativeR
   
 As the aforementioned examples show, pipes can make R code a lot better to read. The *declarativeR* package provides some additional functions and operators to furthermore simplify R code. 
 
 These additions include a number of operators to facilitate short hand code for flow control (*e.g.*, ```%if%``` and ```%xor%```), pipe operators to apply functions over lists (*e.g.*, ```%>lapply%```), set operators to simplify common set operations  (*e.g.*, ```%union%```) and string operators (*e.g.*, ```%+%```). 
 
-## 1. Flow control
+___
 
-### ```%if% and %if.not% ```
+### 1. Flow control
+
+#### 1.1. ```%if% and %if.not% ```
 The *declarativeR* package provides shorthand operators for if and 'if not'. Standard syntax: 
 
 ```do x %if% (condition)```
@@ -38,9 +44,7 @@ The *declarativeR* package provides shorthand operators for if and 'if not'. Sta
    
 So the left hand side is executed if the condition on the right hand side is met. Note that if the left hand side is an assign operation, a null value is assigned if no brackets are placed around the statement. 
 
-
-TEST
-
+ 
 __Example:__
 
 ```R
@@ -60,16 +64,17 @@ __Example:__
  
 ```
 
-### ```%xor% ```
+#### 1.2. ```%xor% ```
 
 The exclusive or operator is included in R as a function. delcarativeR adds a trivial operator version, namely ```%xor%```. 
 
+___
 
-## 2. Apply functions over lists
+### 2. Apply functions over lists
 
 R's built in apply operators can be very handy to shorten existing code, but these functions typically introduce a lot of brackets in the code. Both *magrittR* and *declarativeR* can be used to get rid of these, and produce more readable code. 
 
-### ```%>lapply% and %>sapply% ```
+#### ```%>lapply% and %>sapply% ```
 
 These operators simplify the common task of applying one or more functions on a list of items. The piping style is analoguous to the *magrittR* pipe operator.
 
@@ -110,9 +115,18 @@ __Example:__
     
 ```
 
-## 3. Working with sets
+___
+
+### 3. Working with sets
+
+Set operations in standard R typically require the ```union()```, ```intersect()``` and ```setdiff()``` functions. In declarativeR, one can use the corresponding operators. 
+
+```
 
 
+
+
+```
 
 
 
