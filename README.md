@@ -21,9 +21,11 @@ __Example using magrittR:__
        strrep(2)                             
 ```
   
-# From functions to declarativeR
+# From functions to pipes to declarativeR
   
-The *declarativeR* library provides some additional functions to furthermore simplify R code. The idea is to use pipes and declarative statements where possible. 
+As the aforementioned examples show, pipes can make R code a lot better to read. The *declarativeR* package provides some additional functions and operators to furthermore simplify R code. 
+
+These additions include a number of operators to facilitate short hand code for flow control (*e.g.*, ```%if%``` and ```%xor%```), pipe operators to apply functions over lists (*e.g.*, ```%>lapply%```), set operators to simplify common set operations  (*e.g.*, ```%union%```) and string operators (*e.g.*, ```%+%```). 
 
 ## 1. Flow control
 
