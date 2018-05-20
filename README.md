@@ -119,22 +119,58 @@ ___
 
 ### 3. Working with sets
 
-Set operations in standard R typically require the ```union()```, ```intersect()``` and ```setdiff()``` functions. In declarativeR, one can use the corresponding operators. 
+#### 3.1. ```%union%```, ```%intersect%```, and ```%setdiff%```
+Standard R has set functions such as ```union()```, ```intersect()``` and ```setdiff()``` functions. In declarativeR, one can use the corresponding operators. 
 
+__Example:__
+
+```R
+    # Define some input vectors:
+    a <- c("a","b","c")
+    b <- c("a","d")
+
+    # Return the union of a and b:
+    a %union% b
+    
+    # Return the intersect of a and b:
+    a %intersect% b
+    
+    # Returns a minus all elements that exist in b:
+    a %setdiff% b
+    
+    # Calculate the jaccard similarity between a and b:
+    (a %intersect% b %>% length) / 
+        (a %union% b %>% length)
+ 
 ```
 
+#### 3.2. Set metrics (similarity, distance)
+
+#### ```%jaccard%```  
+Calculate the Jaccard similarity coefficient of set a and b. 
+
+#### ```%hamming%```
+Calculate the Hamming distance between two *equally length* strings or vectors. 
+
+__Examples:__
+
+```R
+
+    
+
 
 
 
 ```
+___
 
 
 
+### 4. String handling
 
 
-
-
-
+#### ``` %levenshtein%```
+Calculate the Hamming distance between two strings or vectors of possibly unequal length. 
 
 
 

@@ -32,7 +32,7 @@
     return(intersect(x,y))
 }
 
-#' Intersect
+#' Has
 #'
 #' @param x A vector
 #' @param y A vector
