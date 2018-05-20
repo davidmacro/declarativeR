@@ -38,6 +38,9 @@ The *declarativeR* package provides shorthand operators for if and 'if not'. Sta
    
 So the left hand side is executed if the condition on the right hand side is met. Note that if the left hand side is an assign operation, a null value is assigned if no brackets are placed around the statement. 
 
+
+TEST
+
 __Example:__
 
 ```R
