@@ -3,8 +3,7 @@
 #' @param x 
 #' @param y function definition
 #' @name declarativeR_Apply 
-#' @aliases declapply
-#' @export
+#' @aliases declapply 
 #' @md
 NULL
 #> NULL
