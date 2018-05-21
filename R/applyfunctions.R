@@ -1,10 +1,9 @@
 #' Apply functions over lists
 #'
-#' @param x 
-#' @param y function definition
-#' @name declarativeR_Apply 
-#' @aliases declapply 
-#' @md
+#' @param x input list
+#' @param y function
+#' @name declarativeApply   
+#' @rdname declarativeApply
 NULL
 #> NULL
 
@@ -17,7 +16,7 @@ NULL
     x %>% lapply(y)
 
 }
- 
+  
 
 #' @name \%>sapply\%
 #' @rdname declarativeApply
