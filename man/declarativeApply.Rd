@@ -6,7 +6,7 @@
 \alias{\%>lapply\%}
 \alias{\\%>sapply\\%}
 \alias{\%>sapply\%}
-\title{Apply functions over lists}
+\title{test}
 \usage{
 x \%>lapply\% y
 

@@ -3,6 +3,7 @@
 #' @param x input list
 #' @param y function
 #' @name declarativeApply   
+#' @title test
 #' @rdname declarativeApply
 NULL
 #> NULL
