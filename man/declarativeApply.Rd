@@ -2,11 +2,9 @@
 % Please edit documentation in R/applyfunctions.R
 \name{declarativeApply}
 \alias{declarativeApply}
-\alias{\\%>lapply\\%}
 \alias{\%>lapply\%}
-\alias{\\%>sapply\\%}
 \alias{\%>sapply\%}
-\title{test}
+\title{Declarative Apply}
 \usage{
 x \%>lapply\% y
 
@@ -19,4 +17,16 @@ x \%>sapply\% y
 }
 \description{
 Apply functions over lists
+}
+\examples{
+
+# Input:
+input <- list(a = c(1,2,3),       
+              b = c(4,4,5), 
+              c = c(1,2,3,4,5))
+
+
+# Chain lapply and sapply:
+input \%>lapply\% sum \%>sapply\% sqrt
+
 }
