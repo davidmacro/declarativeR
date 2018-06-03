@@ -5,7 +5,7 @@
 #' @return All elements in x that are not in y.
 #' @examples
 #'  
-#'  
+#' @export 
 `%-%` <- function(x,y){
     return(setdiff(x,y))
 }
@@ -16,7 +16,7 @@
 #' @param y A vector
 #' @return All unique elements in the combined set (x,y).
 #'  
-#' 
+#' @export
 `%union%` <- function(x,y){
     return(union(x,y))
 }
@@ -27,7 +27,7 @@
 #' @param y A vector
 #' @return All unique elements that are in both x and y.
 #'  
-#' 
+#' @export
 `%intersect%` <- function(x,y){
     return(intersect(x,y))
 }
@@ -38,9 +38,12 @@
 #' @param y A vector
 #' @return All unique elements that are in both x and y.
 #'  
-#' 
-`%has%` <- function(x,y){ y %in% names(x) %>% all %>% return}
-
-`%extract.like%` <- function(x,y){
-    x %>% grep(y, ., value = T)
+#' @export
+`%has%` <- function(x,y){ 
+    y %in% names(x) %>% all %>% return
 }
+
+
+
+
+

@@ -20,21 +20,14 @@ NULL
  
 #' @rdname declarativeApply
 #' @export
-"%>lapply%" <- function(x,y){
-
-    require(magrittr) 
-    x %>% lapply(y)
-
+"%>lapply%" <- function(x,y){ 
+    x %>% lapply(y) 
 }
   
  
 #' @rdname declarativeApply
 #' @export
-"%>sapply%" <- function(x,y){
-
-    require(magrittr)
-
+"%>sapply%" <- function(x,y){ 
     x %>% sapply(y)
-
 }
 

@@ -3,6 +3,7 @@
 #' @param x A statement or set of statements
 #' @param y A condition
 #' @return  
+#' @export
 `%if%` <- function(x,y){
 
     if(isTRUE(eval(y))){
@@ -16,6 +17,7 @@
 #' @param x A statement or set of statements
 #' @param y A condition
 #' @return  
+#' @export
 `%if.not%` <- function(x,y){
 
     require(magrittr)
@@ -31,6 +33,7 @@
 #' @param x A statement or set of statements
 #' @param y A condition
 #' @return  
+#' @export
 `%xor%` <- function(x,y){
     return(xor(x,y))
 }

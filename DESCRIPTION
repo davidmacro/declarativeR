@@ -8,3 +8,5 @@ Description: Convenience functions to make R more declarative.
 License: GPL-3.0
 LazyData: TRUE
 RoxygenNote: 6.0.1
+Depends: magrittr
+     
