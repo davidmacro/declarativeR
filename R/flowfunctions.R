@@ -23,6 +23,7 @@
     require(magrittr)
 
     if(isTRUE(eval(y)) %>% not){
+        
         eval(x)
     }
 
