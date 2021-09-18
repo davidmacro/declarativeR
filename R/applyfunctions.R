@@ -31,3 +31,13 @@ NULL
     x %>% sapply(y)
 }
 
+#' @rdname declarativeApply
+#' @export
+"%>mapply%" <- function(x,y){ 
+  stopifnot(is.list(x))
+  stopifnot(!("FUN" %in% names(x)))
+  
+  x$FUN <- y
+  
+  do.call(mapply, args = x)
+}

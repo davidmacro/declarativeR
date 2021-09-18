@@ -40,7 +40,7 @@
 #'  
 #' @export
 `%has%` <- function(x,y){ 
-    y %in% names(x) %>% all %>% return
+   return(y %in% names(x) %>% all)
 }
 
 
